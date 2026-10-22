@@ -1,0 +1,2584 @@
+{
+  "surface": "report",
+  "title": "빅데이터로 보는 세종의 변화",
+  "generatedAt": "2026-10-22T04:00:00+09:00",
+  "status": "reviewed",
+  "filters": [],
+  "queries": {
+    "population": {
+      "rows": [
+        {
+          "year": 2012,
+          "total": 113117,
+          "children": 18503,
+          "working": 77400,
+          "older": 17214,
+          "childrenPct": 16.357399860321614,
+          "workingPct": 68.42472837858146,
+          "olderPct": 15.217871761096918
+        },
+        {
+          "year": 2013,
+          "total": 122153,
+          "children": 20162,
+          "working": 84033,
+          "older": 17958,
+          "childrenPct": 16.505529950144492,
+          "workingPct": 68.79323471384248,
+          "olderPct": 14.701235336013033
+        },
+        {
+          "year": 2014,
+          "total": 156125,
+          "children": 28454,
+          "working": 107894,
+          "older": 19777,
+          "childrenPct": 18.225140112089672,
+          "workingPct": 69.10744595676542,
+          "olderPct": 12.667413931144916
+        },
+        {
+          "year": 2015,
+          "total": 210884,
+          "children": 42411,
+          "working": 146074,
+          "older": 22399,
+          "childrenPct": 20.111056315320273,
+          "workingPct": 69.26746457768252,
+          "olderPct": 10.621479106997212
+        },
+        {
+          "year": 2016,
+          "total": 243048,
+          "children": 49587,
+          "working": 169264,
+          "older": 24197,
+          "childrenPct": 20.402142786610053,
+          "workingPct": 69.64221059214641,
+          "olderPct": 9.95564662124354
+        },
+        {
+          "year": 2017,
+          "total": 280100,
+          "children": 57865,
+          "working": 195384,
+          "older": 26851,
+          "childrenPct": 20.658693323812923,
+          "workingPct": 69.75508746876116,
+          "olderPct": 9.58621920742592
+        },
+        {
+          "year": 2018,
+          "total": 314126,
+          "children": 64822,
+          "working": 220126,
+          "older": 29178,
+          "childrenPct": 20.63566848971432,
+          "workingPct": 70.0757021067979,
+          "olderPct": 9.288629403487773
+        },
+        {
+          "year": 2019,
+          "total": 340575,
+          "children": 69570,
+          "working": 239056,
+          "older": 31949,
+          "childrenPct": 20.427218674300814,
+          "workingPct": 70.19188137708288,
+          "olderPct": 9.38089994861631
+        },
+        {
+          "year": 2020,
+          "total": 355831,
+          "children": 71602,
+          "working": 249348,
+          "older": 34881,
+          "childrenPct": 20.122473871023043,
+          "workingPct": 70.07483889824101,
+          "olderPct": 9.80268723073594
+        },
+        {
+          "year": 2021,
+          "total": 371895,
+          "children": 73055,
+          "working": 261377,
+          "older": 37463,
+          "childrenPct": 19.643985533551138,
+          "workingPct": 70.28247220317563,
+          "olderPct": 10.073542263273236
+        },
+        {
+          "year": 2022,
+          "total": 383591,
+          "children": 73508,
+          "working": 269864,
+          "older": 40219,
+          "childrenPct": 19.163119051281182,
+          "workingPct": 70.35201555823781,
+          "olderPct": 10.484865390481007
+        },
+        {
+          "year": 2023,
+          "total": 386525,
+          "children": 71439,
+          "working": 272526,
+          "older": 42560,
+          "childrenPct": 18.48237500808486,
+          "workingPct": 70.50669426298428,
+          "olderPct": 11.010930728930859
+        }
+      ],
+      "source": {
+        "label": "행정안전부 주민등록 인구통계",
+        "url": "https://jumin.mois.go.kr/ageStatMonth.do",
+        "tables": [
+          "연령별 인구현황: 2012~2023년 12월, 세종특별자치시"
+        ],
+        "filters": [
+          "행정구역 코드 3600000000",
+          "등록구분 전체, 외국인 제외"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "공식 CSV 다운로드",
+            "detail": "downloadCsvAge.do?searchYearMonth=month&xlsStats=1 에 연도별 12월, sltOrgLvl1=A, sltArgTypes=5, 0~100세를 요청. 세종 행만 추출."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "공식 집계표에서 세종 단독 행·열만 추출. 인구 연령합·성별합, 순이동=전입-전출, 경로합+내부이동=총이동을 검산. 인구 비율은 해당 연도 총인구를 분모로 계산."
+        }
+      ]
+    },
+    "ages": {
+      "rows": [
+        {
+          "year": 2012,
+          "age": "0~4세",
+          "order": 0,
+          "total": 6079,
+          "male": 3066,
+          "female": 3013
+        },
+        {
+          "year": 2012,
+          "age": "5~9세",
+          "order": 1,
+          "total": 5953,
+          "male": 2994,
+          "female": 2959
+        },
+        {
+          "year": 2012,
+          "age": "10~14세",
+          "order": 2,
+          "total": 6471,
+          "male": 3305,
+          "female": 3166
+        },
+        {
+          "year": 2012,
+          "age": "15~19세",
+          "order": 3,
+          "total": 6256,
+          "male": 3388,
+          "female": 2868
+        },
+        {
+          "year": 2012,
+          "age": "20~24세",
+          "order": 4,
+          "total": 6458,
+          "male": 3472,
+          "female": 2986
+        },
+        {
+          "year": 2012,
+          "age": "25~29세",
+          "order": 5,
+          "total": 6369,
+          "male": 3495,
+          "female": 2874
+        },
+        {
+          "year": 2012,
+          "age": "30~34세",
+          "order": 6,
+          "total": 8765,
+          "male": 4592,
+          "female": 4173
+        },
+        {
+          "year": 2012,
+          "age": "35~39세",
+          "order": 7,
+          "total": 9547,
+          "male": 5024,
+          "female": 4523
+        },
+        {
+          "year": 2012,
+          "age": "40~44세",
+          "order": 8,
+          "total": 9718,
+          "male": 5440,
+          "female": 4278
+        },
+        {
+          "year": 2012,
+          "age": "45~49세",
+          "order": 9,
+          "total": 8075,
+          "male": 4385,
+          "female": 3690
+        },
+        {
+          "year": 2012,
+          "age": "50~54세",
+          "order": 10,
+          "total": 9046,
+          "male": 4813,
+          "female": 4233
+        },
+        {
+          "year": 2012,
+          "age": "55~59세",
+          "order": 11,
+          "total": 7474,
+          "male": 3874,
+          "female": 3600
+        },
+        {
+          "year": 2012,
+          "age": "60~64세",
+          "order": 12,
+          "total": 5692,
+          "male": 2808,
+          "female": 2884
+        },
+        {
+          "year": 2012,
+          "age": "65~69세",
+          "order": 13,
+          "total": 4556,
+          "male": 2109,
+          "female": 2447
+        },
+        {
+          "year": 2012,
+          "age": "70~74세",
+          "order": 14,
+          "total": 5064,
+          "male": 2195,
+          "female": 2869
+        },
+        {
+          "year": 2012,
+          "age": "75~79세",
+          "order": 15,
+          "total": 3850,
+          "male": 1542,
+          "female": 2308
+        },
+        {
+          "year": 2012,
+          "age": "80~84세",
+          "order": 16,
+          "total": 2263,
+          "male": 724,
+          "female": 1539
+        },
+        {
+          "year": 2012,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1007,
+          "male": 289,
+          "female": 718
+        },
+        {
+          "year": 2012,
+          "age": "90~94세",
+          "order": 18,
+          "total": 352,
+          "male": 88,
+          "female": 264
+        },
+        {
+          "year": 2012,
+          "age": "95~99세",
+          "order": 19,
+          "total": 83,
+          "male": 14,
+          "female": 69
+        },
+        {
+          "year": 2012,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 39,
+          "male": 16,
+          "female": 23
+        },
+        {
+          "year": 2013,
+          "age": "0~4세",
+          "order": 0,
+          "total": 6597,
+          "male": 3326,
+          "female": 3271
+        },
+        {
+          "year": 2013,
+          "age": "5~9세",
+          "order": 1,
+          "total": 6763,
+          "male": 3428,
+          "female": 3335
+        },
+        {
+          "year": 2013,
+          "age": "10~14세",
+          "order": 2,
+          "total": 6802,
+          "male": 3496,
+          "female": 3306
+        },
+        {
+          "year": 2013,
+          "age": "15~19세",
+          "order": 3,
+          "total": 6738,
+          "male": 3557,
+          "female": 3181
+        },
+        {
+          "year": 2013,
+          "age": "20~24세",
+          "order": 4,
+          "total": 7008,
+          "male": 3719,
+          "female": 3289
+        },
+        {
+          "year": 2013,
+          "age": "25~29세",
+          "order": 5,
+          "total": 6876,
+          "male": 3781,
+          "female": 3095
+        },
+        {
+          "year": 2013,
+          "age": "30~34세",
+          "order": 6,
+          "total": 9553,
+          "male": 4914,
+          "female": 4639
+        },
+        {
+          "year": 2013,
+          "age": "35~39세",
+          "order": 7,
+          "total": 10041,
+          "male": 5206,
+          "female": 4835
+        },
+        {
+          "year": 2013,
+          "age": "40~44세",
+          "order": 8,
+          "total": 11006,
+          "male": 6141,
+          "female": 4865
+        },
+        {
+          "year": 2013,
+          "age": "45~49세",
+          "order": 9,
+          "total": 9103,
+          "male": 4968,
+          "female": 4135
+        },
+        {
+          "year": 2013,
+          "age": "50~54세",
+          "order": 10,
+          "total": 9487,
+          "male": 5059,
+          "female": 4428
+        },
+        {
+          "year": 2013,
+          "age": "55~59세",
+          "order": 11,
+          "total": 8266,
+          "male": 4345,
+          "female": 3921
+        },
+        {
+          "year": 2013,
+          "age": "60~64세",
+          "order": 12,
+          "total": 5955,
+          "male": 2945,
+          "female": 3010
+        },
+        {
+          "year": 2013,
+          "age": "65~69세",
+          "order": 13,
+          "total": 4776,
+          "male": 2240,
+          "female": 2536
+        },
+        {
+          "year": 2013,
+          "age": "70~74세",
+          "order": 14,
+          "total": 5078,
+          "male": 2195,
+          "female": 2883
+        },
+        {
+          "year": 2013,
+          "age": "75~79세",
+          "order": 15,
+          "total": 4028,
+          "male": 1659,
+          "female": 2369
+        },
+        {
+          "year": 2013,
+          "age": "80~84세",
+          "order": 16,
+          "total": 2438,
+          "male": 786,
+          "female": 1652
+        },
+        {
+          "year": 2013,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1104,
+          "male": 303,
+          "female": 801
+        },
+        {
+          "year": 2013,
+          "age": "90~94세",
+          "order": 18,
+          "total": 397,
+          "male": 106,
+          "female": 291
+        },
+        {
+          "year": 2013,
+          "age": "95~99세",
+          "order": 19,
+          "total": 97,
+          "male": 14,
+          "female": 83
+        },
+        {
+          "year": 2013,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 40,
+          "male": 17,
+          "female": 23
+        },
+        {
+          "year": 2014,
+          "age": "0~4세",
+          "order": 0,
+          "total": 9831,
+          "male": 5002,
+          "female": 4829
+        },
+        {
+          "year": 2014,
+          "age": "5~9세",
+          "order": 1,
+          "total": 9693,
+          "male": 4932,
+          "female": 4761
+        },
+        {
+          "year": 2014,
+          "age": "10~14세",
+          "order": 2,
+          "total": 8930,
+          "male": 4570,
+          "female": 4360
+        },
+        {
+          "year": 2014,
+          "age": "15~19세",
+          "order": 3,
+          "total": 8225,
+          "male": 4261,
+          "female": 3964
+        },
+        {
+          "year": 2014,
+          "age": "20~24세",
+          "order": 4,
+          "total": 8777,
+          "male": 4586,
+          "female": 4191
+        },
+        {
+          "year": 2014,
+          "age": "25~29세",
+          "order": 5,
+          "total": 8755,
+          "male": 4552,
+          "female": 4203
+        },
+        {
+          "year": 2014,
+          "age": "30~34세",
+          "order": 6,
+          "total": 13227,
+          "male": 6529,
+          "female": 6698
+        },
+        {
+          "year": 2014,
+          "age": "35~39세",
+          "order": 7,
+          "total": 14421,
+          "male": 7253,
+          "female": 7168
+        },
+        {
+          "year": 2014,
+          "age": "40~44세",
+          "order": 8,
+          "total": 15043,
+          "male": 8241,
+          "female": 6802
+        },
+        {
+          "year": 2014,
+          "age": "45~49세",
+          "order": 9,
+          "total": 11714,
+          "male": 6379,
+          "female": 5335
+        },
+        {
+          "year": 2014,
+          "age": "50~54세",
+          "order": 10,
+          "total": 11064,
+          "male": 5963,
+          "female": 5101
+        },
+        {
+          "year": 2014,
+          "age": "55~59세",
+          "order": 11,
+          "total": 9717,
+          "male": 5042,
+          "female": 4675
+        },
+        {
+          "year": 2014,
+          "age": "60~64세",
+          "order": 12,
+          "total": 6951,
+          "male": 3473,
+          "female": 3478
+        },
+        {
+          "year": 2014,
+          "age": "65~69세",
+          "order": 13,
+          "total": 5418,
+          "male": 2558,
+          "female": 2860
+        },
+        {
+          "year": 2014,
+          "age": "70~74세",
+          "order": 14,
+          "total": 5294,
+          "male": 2313,
+          "female": 2981
+        },
+        {
+          "year": 2014,
+          "age": "75~79세",
+          "order": 15,
+          "total": 4394,
+          "male": 1785,
+          "female": 2609
+        },
+        {
+          "year": 2014,
+          "age": "80~84세",
+          "order": 16,
+          "total": 2786,
+          "male": 938,
+          "female": 1848
+        },
+        {
+          "year": 2014,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1295,
+          "male": 344,
+          "female": 951
+        },
+        {
+          "year": 2014,
+          "age": "90~94세",
+          "order": 18,
+          "total": 465,
+          "male": 123,
+          "female": 342
+        },
+        {
+          "year": 2014,
+          "age": "95~99세",
+          "order": 19,
+          "total": 91,
+          "male": 8,
+          "female": 83
+        },
+        {
+          "year": 2014,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 34,
+          "male": 10,
+          "female": 24
+        },
+        {
+          "year": 2015,
+          "age": "0~4세",
+          "order": 0,
+          "total": 14725,
+          "male": 7583,
+          "female": 7142
+        },
+        {
+          "year": 2015,
+          "age": "5~9세",
+          "order": 1,
+          "total": 15100,
+          "male": 7657,
+          "female": 7443
+        },
+        {
+          "year": 2015,
+          "age": "10~14세",
+          "order": 2,
+          "total": 12586,
+          "male": 6379,
+          "female": 6207
+        },
+        {
+          "year": 2015,
+          "age": "15~19세",
+          "order": 3,
+          "total": 10812,
+          "male": 5565,
+          "female": 5247
+        },
+        {
+          "year": 2015,
+          "age": "20~24세",
+          "order": 4,
+          "total": 11419,
+          "male": 5989,
+          "female": 5430
+        },
+        {
+          "year": 2015,
+          "age": "25~29세",
+          "order": 5,
+          "total": 11624,
+          "male": 5774,
+          "female": 5850
+        },
+        {
+          "year": 2015,
+          "age": "30~34세",
+          "order": 6,
+          "total": 18411,
+          "male": 8807,
+          "female": 9604
+        },
+        {
+          "year": 2015,
+          "age": "35~39세",
+          "order": 7,
+          "total": 21614,
+          "male": 10701,
+          "female": 10913
+        },
+        {
+          "year": 2015,
+          "age": "40~44세",
+          "order": 8,
+          "total": 21362,
+          "male": 11337,
+          "female": 10025
+        },
+        {
+          "year": 2015,
+          "age": "45~49세",
+          "order": 9,
+          "total": 16008,
+          "male": 8722,
+          "female": 7286
+        },
+        {
+          "year": 2015,
+          "age": "50~54세",
+          "order": 10,
+          "total": 13541,
+          "male": 7181,
+          "female": 6360
+        },
+        {
+          "year": 2015,
+          "age": "55~59세",
+          "order": 11,
+          "total": 12331,
+          "male": 6360,
+          "female": 5971
+        },
+        {
+          "year": 2015,
+          "age": "60~64세",
+          "order": 12,
+          "total": 8952,
+          "male": 4468,
+          "female": 4484
+        },
+        {
+          "year": 2015,
+          "age": "65~69세",
+          "order": 13,
+          "total": 6662,
+          "male": 3219,
+          "female": 3443
+        },
+        {
+          "year": 2015,
+          "age": "70~74세",
+          "order": 14,
+          "total": 5637,
+          "male": 2460,
+          "female": 3177
+        },
+        {
+          "year": 2015,
+          "age": "75~79세",
+          "order": 15,
+          "total": 4714,
+          "male": 1916,
+          "female": 2798
+        },
+        {
+          "year": 2015,
+          "age": "80~84세",
+          "order": 16,
+          "total": 3178,
+          "male": 1077,
+          "female": 2101
+        },
+        {
+          "year": 2015,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1540,
+          "male": 415,
+          "female": 1125
+        },
+        {
+          "year": 2015,
+          "age": "90~94세",
+          "order": 18,
+          "total": 541,
+          "male": 120,
+          "female": 421
+        },
+        {
+          "year": 2015,
+          "age": "95~99세",
+          "order": 19,
+          "total": 93,
+          "male": 13,
+          "female": 80
+        },
+        {
+          "year": 2015,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 34,
+          "male": 9,
+          "female": 25
+        },
+        {
+          "year": 2016,
+          "age": "0~4세",
+          "order": 0,
+          "total": 17044,
+          "male": 8741,
+          "female": 8303
+        },
+        {
+          "year": 2016,
+          "age": "5~9세",
+          "order": 1,
+          "total": 17867,
+          "male": 8990,
+          "female": 8877
+        },
+        {
+          "year": 2016,
+          "age": "10~14세",
+          "order": 2,
+          "total": 14676,
+          "male": 7409,
+          "female": 7267
+        },
+        {
+          "year": 2016,
+          "age": "15~19세",
+          "order": 3,
+          "total": 12449,
+          "male": 6345,
+          "female": 6104
+        },
+        {
+          "year": 2016,
+          "age": "20~24세",
+          "order": 4,
+          "total": 12764,
+          "male": 6714,
+          "female": 6050
+        },
+        {
+          "year": 2016,
+          "age": "25~29세",
+          "order": 5,
+          "total": 13759,
+          "male": 6711,
+          "female": 7048
+        },
+        {
+          "year": 2016,
+          "age": "30~34세",
+          "order": 6,
+          "total": 20193,
+          "male": 9749,
+          "female": 10444
+        },
+        {
+          "year": 2016,
+          "age": "35~39세",
+          "order": 7,
+          "total": 25758,
+          "male": 12652,
+          "female": 13106
+        },
+        {
+          "year": 2016,
+          "age": "40~44세",
+          "order": 8,
+          "total": 24293,
+          "male": 12668,
+          "female": 11625
+        },
+        {
+          "year": 2016,
+          "age": "45~49세",
+          "order": 9,
+          "total": 19895,
+          "male": 10863,
+          "female": 9032
+        },
+        {
+          "year": 2016,
+          "age": "50~54세",
+          "order": 10,
+          "total": 14927,
+          "male": 7903,
+          "female": 7024
+        },
+        {
+          "year": 2016,
+          "age": "55~59세",
+          "order": 11,
+          "total": 14513,
+          "male": 7399,
+          "female": 7114
+        },
+        {
+          "year": 2016,
+          "age": "60~64세",
+          "order": 12,
+          "total": 10713,
+          "male": 5313,
+          "female": 5400
+        },
+        {
+          "year": 2016,
+          "age": "65~69세",
+          "order": 13,
+          "total": 7446,
+          "male": 3585,
+          "female": 3861
+        },
+        {
+          "year": 2016,
+          "age": "70~74세",
+          "order": 14,
+          "total": 5763,
+          "male": 2593,
+          "female": 3170
+        },
+        {
+          "year": 2016,
+          "age": "75~79세",
+          "order": 15,
+          "total": 5030,
+          "male": 2049,
+          "female": 2981
+        },
+        {
+          "year": 2016,
+          "age": "80~84세",
+          "order": 16,
+          "total": 3501,
+          "male": 1220,
+          "female": 2281
+        },
+        {
+          "year": 2016,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1718,
+          "male": 454,
+          "female": 1264
+        },
+        {
+          "year": 2016,
+          "age": "90~94세",
+          "order": 18,
+          "total": 576,
+          "male": 122,
+          "female": 454
+        },
+        {
+          "year": 2016,
+          "age": "95~99세",
+          "order": 19,
+          "total": 114,
+          "male": 17,
+          "female": 97
+        },
+        {
+          "year": 2016,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 49,
+          "male": 8,
+          "female": 41
+        },
+        {
+          "year": 2017,
+          "age": "0~4세",
+          "order": 0,
+          "total": 19226,
+          "male": 9859,
+          "female": 9367
+        },
+        {
+          "year": 2017,
+          "age": "5~9세",
+          "order": 1,
+          "total": 20946,
+          "male": 10642,
+          "female": 10304
+        },
+        {
+          "year": 2017,
+          "age": "10~14세",
+          "order": 2,
+          "total": 17693,
+          "male": 8838,
+          "female": 8855
+        },
+        {
+          "year": 2017,
+          "age": "15~19세",
+          "order": 3,
+          "total": 14370,
+          "male": 7326,
+          "female": 7044
+        },
+        {
+          "year": 2017,
+          "age": "20~24세",
+          "order": 4,
+          "total": 14210,
+          "male": 7517,
+          "female": 6693
+        },
+        {
+          "year": 2017,
+          "age": "25~29세",
+          "order": 5,
+          "total": 16056,
+          "male": 7799,
+          "female": 8257
+        },
+        {
+          "year": 2017,
+          "age": "30~34세",
+          "order": 6,
+          "total": 21908,
+          "male": 10535,
+          "female": 11373
+        },
+        {
+          "year": 2017,
+          "age": "35~39세",
+          "order": 7,
+          "total": 30499,
+          "male": 14846,
+          "female": 15653
+        },
+        {
+          "year": 2017,
+          "age": "40~44세",
+          "order": 8,
+          "total": 28270,
+          "male": 14463,
+          "female": 13807
+        },
+        {
+          "year": 2017,
+          "age": "45~49세",
+          "order": 9,
+          "total": 23850,
+          "male": 12975,
+          "female": 10875
+        },
+        {
+          "year": 2017,
+          "age": "50~54세",
+          "order": 10,
+          "total": 16992,
+          "male": 8879,
+          "female": 8113
+        },
+        {
+          "year": 2017,
+          "age": "55~59세",
+          "order": 11,
+          "total": 16679,
+          "male": 8515,
+          "female": 8164
+        },
+        {
+          "year": 2017,
+          "age": "60~64세",
+          "order": 12,
+          "total": 12550,
+          "male": 6253,
+          "female": 6297
+        },
+        {
+          "year": 2017,
+          "age": "65~69세",
+          "order": 13,
+          "total": 8550,
+          "male": 4139,
+          "female": 4411
+        },
+        {
+          "year": 2017,
+          "age": "70~74세",
+          "order": 14,
+          "total": 6040,
+          "male": 2763,
+          "female": 3277
+        },
+        {
+          "year": 2017,
+          "age": "75~79세",
+          "order": 15,
+          "total": 5670,
+          "male": 2341,
+          "female": 3329
+        },
+        {
+          "year": 2017,
+          "age": "80~84세",
+          "order": 16,
+          "total": 3826,
+          "male": 1360,
+          "female": 2466
+        },
+        {
+          "year": 2017,
+          "age": "85~89세",
+          "order": 17,
+          "total": 1942,
+          "male": 513,
+          "female": 1429
+        },
+        {
+          "year": 2017,
+          "age": "90~94세",
+          "order": 18,
+          "total": 636,
+          "male": 138,
+          "female": 498
+        },
+        {
+          "year": 2017,
+          "age": "95~99세",
+          "order": 19,
+          "total": 138,
+          "male": 27,
+          "female": 111
+        },
+        {
+          "year": 2017,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 49,
+          "male": 6,
+          "female": 43
+        },
+        {
+          "year": 2018,
+          "age": "0~4세",
+          "order": 0,
+          "total": 21018,
+          "male": 10786,
+          "female": 10232
+        },
+        {
+          "year": 2018,
+          "age": "5~9세",
+          "order": 1,
+          "total": 23434,
+          "male": 11992,
+          "female": 11442
+        },
+        {
+          "year": 2018,
+          "age": "10~14세",
+          "order": 2,
+          "total": 20370,
+          "male": 10155,
+          "female": 10215
+        },
+        {
+          "year": 2018,
+          "age": "15~19세",
+          "order": 3,
+          "total": 16325,
+          "male": 8242,
+          "female": 8083
+        },
+        {
+          "year": 2018,
+          "age": "20~24세",
+          "order": 4,
+          "total": 15914,
+          "male": 8424,
+          "female": 7490
+        },
+        {
+          "year": 2018,
+          "age": "25~29세",
+          "order": 5,
+          "total": 18117,
+          "male": 8859,
+          "female": 9258
+        },
+        {
+          "year": 2018,
+          "age": "30~34세",
+          "order": 6,
+          "total": 23831,
+          "male": 11612,
+          "female": 12219
+        },
+        {
+          "year": 2018,
+          "age": "35~39세",
+          "order": 7,
+          "total": 34550,
+          "male": 16746,
+          "female": 17804
+        },
+        {
+          "year": 2018,
+          "age": "40~44세",
+          "order": 8,
+          "total": 30886,
+          "male": 15616,
+          "female": 15270
+        },
+        {
+          "year": 2018,
+          "age": "45~49세",
+          "order": 9,
+          "total": 27361,
+          "male": 14769,
+          "female": 12592
+        },
+        {
+          "year": 2018,
+          "age": "50~54세",
+          "order": 10,
+          "total": 19987,
+          "male": 10431,
+          "female": 9556
+        },
+        {
+          "year": 2018,
+          "age": "55~59세",
+          "order": 11,
+          "total": 18386,
+          "male": 9407,
+          "female": 8979
+        },
+        {
+          "year": 2018,
+          "age": "60~64세",
+          "order": 12,
+          "total": 14769,
+          "male": 7360,
+          "female": 7409
+        },
+        {
+          "year": 2018,
+          "age": "65~69세",
+          "order": 13,
+          "total": 9492,
+          "male": 4588,
+          "female": 4904
+        },
+        {
+          "year": 2018,
+          "age": "70~74세",
+          "order": 14,
+          "total": 6622,
+          "male": 3127,
+          "female": 3495
+        },
+        {
+          "year": 2018,
+          "age": "75~79세",
+          "order": 15,
+          "total": 5911,
+          "male": 2476,
+          "female": 3435
+        },
+        {
+          "year": 2018,
+          "age": "80~84세",
+          "order": 16,
+          "total": 4063,
+          "male": 1465,
+          "female": 2598
+        },
+        {
+          "year": 2018,
+          "age": "85~89세",
+          "order": 17,
+          "total": 2145,
+          "male": 565,
+          "female": 1580
+        },
+        {
+          "year": 2018,
+          "age": "90~94세",
+          "order": 18,
+          "total": 736,
+          "male": 168,
+          "female": 568
+        },
+        {
+          "year": 2018,
+          "age": "95~99세",
+          "order": 19,
+          "total": 155,
+          "male": 36,
+          "female": 119
+        },
+        {
+          "year": 2018,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 54,
+          "male": 7,
+          "female": 47
+        },
+        {
+          "year": 2019,
+          "age": "0~4세",
+          "order": 0,
+          "total": 21998,
+          "male": 11215,
+          "female": 10783
+        },
+        {
+          "year": 2019,
+          "age": "5~9세",
+          "order": 1,
+          "total": 25251,
+          "male": 12937,
+          "female": 12314
+        },
+        {
+          "year": 2019,
+          "age": "10~14세",
+          "order": 2,
+          "total": 22321,
+          "male": 11209,
+          "female": 11112
+        },
+        {
+          "year": 2019,
+          "age": "15~19세",
+          "order": 3,
+          "total": 17716,
+          "male": 8885,
+          "female": 8831
+        },
+        {
+          "year": 2019,
+          "age": "20~24세",
+          "order": 4,
+          "total": 16611,
+          "male": 8683,
+          "female": 7928
+        },
+        {
+          "year": 2019,
+          "age": "25~29세",
+          "order": 5,
+          "total": 19729,
+          "male": 9674,
+          "female": 10055
+        },
+        {
+          "year": 2019,
+          "age": "30~34세",
+          "order": 6,
+          "total": 25644,
+          "male": 12495,
+          "female": 13149
+        },
+        {
+          "year": 2019,
+          "age": "35~39세",
+          "order": 7,
+          "total": 35820,
+          "male": 17489,
+          "female": 18331
+        },
+        {
+          "year": 2019,
+          "age": "40~44세",
+          "order": 8,
+          "total": 33875,
+          "male": 16918,
+          "female": 16957
+        },
+        {
+          "year": 2019,
+          "age": "45~49세",
+          "order": 9,
+          "total": 30597,
+          "male": 16306,
+          "female": 14291
+        },
+        {
+          "year": 2019,
+          "age": "50~54세",
+          "order": 10,
+          "total": 22627,
+          "male": 11794,
+          "female": 10833
+        },
+        {
+          "year": 2019,
+          "age": "55~59세",
+          "order": 11,
+          "total": 19853,
+          "male": 10186,
+          "female": 9667
+        },
+        {
+          "year": 2019,
+          "age": "60~64세",
+          "order": 12,
+          "total": 16584,
+          "male": 8288,
+          "female": 8296
+        },
+        {
+          "year": 2019,
+          "age": "65~69세",
+          "order": 13,
+          "total": 10624,
+          "male": 5191,
+          "female": 5433
+        },
+        {
+          "year": 2019,
+          "age": "70~74세",
+          "order": 14,
+          "total": 7437,
+          "male": 3533,
+          "female": 3904
+        },
+        {
+          "year": 2019,
+          "age": "75~79세",
+          "order": 15,
+          "total": 6008,
+          "male": 2545,
+          "female": 3463
+        },
+        {
+          "year": 2019,
+          "age": "80~84세",
+          "order": 16,
+          "total": 4372,
+          "male": 1582,
+          "female": 2790
+        },
+        {
+          "year": 2019,
+          "age": "85~89세",
+          "order": 17,
+          "total": 2392,
+          "male": 667,
+          "female": 1725
+        },
+        {
+          "year": 2019,
+          "age": "90~94세",
+          "order": 18,
+          "total": 882,
+          "male": 199,
+          "female": 683
+        },
+        {
+          "year": 2019,
+          "age": "95~99세",
+          "order": 19,
+          "total": 181,
+          "male": 40,
+          "female": 141
+        },
+        {
+          "year": 2019,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 53,
+          "male": 9,
+          "female": 44
+        },
+        {
+          "year": 2020,
+          "age": "0~4세",
+          "order": 0,
+          "total": 20901,
+          "male": 10638,
+          "female": 10263
+        },
+        {
+          "year": 2020,
+          "age": "5~9세",
+          "order": 1,
+          "total": 26382,
+          "male": 13550,
+          "female": 12832
+        },
+        {
+          "year": 2020,
+          "age": "10~14세",
+          "order": 2,
+          "total": 24319,
+          "male": 12249,
+          "female": 12070
+        },
+        {
+          "year": 2020,
+          "age": "15~19세",
+          "order": 3,
+          "total": 18358,
+          "male": 9170,
+          "female": 9188
+        },
+        {
+          "year": 2020,
+          "age": "20~24세",
+          "order": 4,
+          "total": 17056,
+          "male": 8931,
+          "female": 8125
+        },
+        {
+          "year": 2020,
+          "age": "25~29세",
+          "order": 5,
+          "total": 20397,
+          "male": 10119,
+          "female": 10278
+        },
+        {
+          "year": 2020,
+          "age": "30~34세",
+          "order": 6,
+          "total": 26014,
+          "male": 12727,
+          "female": 13287
+        },
+        {
+          "year": 2020,
+          "age": "35~39세",
+          "order": 7,
+          "total": 35478,
+          "male": 17277,
+          "female": 18201
+        },
+        {
+          "year": 2020,
+          "age": "40~44세",
+          "order": 8,
+          "total": 36398,
+          "male": 18085,
+          "female": 18313
+        },
+        {
+          "year": 2020,
+          "age": "45~49세",
+          "order": 9,
+          "total": 32433,
+          "male": 17103,
+          "female": 15330
+        },
+        {
+          "year": 2020,
+          "age": "50~54세",
+          "order": 10,
+          "total": 24767,
+          "male": 12966,
+          "female": 11801
+        },
+        {
+          "year": 2020,
+          "age": "55~59세",
+          "order": 11,
+          "total": 20438,
+          "male": 10528,
+          "female": 9910
+        },
+        {
+          "year": 2020,
+          "age": "60~64세",
+          "order": 12,
+          "total": 18009,
+          "male": 9001,
+          "female": 9008
+        },
+        {
+          "year": 2020,
+          "age": "65~69세",
+          "order": 13,
+          "total": 12130,
+          "male": 5934,
+          "female": 6196
+        },
+        {
+          "year": 2020,
+          "age": "70~74세",
+          "order": 14,
+          "total": 8276,
+          "male": 3989,
+          "female": 4287
+        },
+        {
+          "year": 2020,
+          "age": "75~79세",
+          "order": 15,
+          "total": 6116,
+          "male": 2613,
+          "female": 3503
+        },
+        {
+          "year": 2020,
+          "age": "80~84세",
+          "order": 16,
+          "total": 4429,
+          "male": 1644,
+          "female": 2785
+        },
+        {
+          "year": 2020,
+          "age": "85~89세",
+          "order": 17,
+          "total": 2680,
+          "male": 771,
+          "female": 1909
+        },
+        {
+          "year": 2020,
+          "age": "90~94세",
+          "order": 18,
+          "total": 994,
+          "male": 222,
+          "female": 772
+        },
+        {
+          "year": 2020,
+          "age": "95~99세",
+          "order": 19,
+          "total": 206,
+          "male": 41,
+          "female": 165
+        },
+        {
+          "year": 2020,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 50,
+          "male": 10,
+          "female": 40
+        },
+        {
+          "year": 2021,
+          "age": "0~4세",
+          "order": 0,
+          "total": 19998,
+          "male": 10149,
+          "female": 9849
+        },
+        {
+          "year": 2021,
+          "age": "5~9세",
+          "order": 1,
+          "total": 27065,
+          "male": 13835,
+          "female": 13230
+        },
+        {
+          "year": 2021,
+          "age": "10~14세",
+          "order": 2,
+          "total": 25992,
+          "male": 13145,
+          "female": 12847
+        },
+        {
+          "year": 2021,
+          "age": "15~19세",
+          "order": 3,
+          "total": 19802,
+          "male": 9936,
+          "female": 9866
+        },
+        {
+          "year": 2021,
+          "age": "20~24세",
+          "order": 4,
+          "total": 17528,
+          "male": 9203,
+          "female": 8325
+        },
+        {
+          "year": 2021,
+          "age": "25~29세",
+          "order": 5,
+          "total": 20982,
+          "male": 10525,
+          "female": 10457
+        },
+        {
+          "year": 2021,
+          "age": "30~34세",
+          "order": 6,
+          "total": 27081,
+          "male": 13174,
+          "female": 13907
+        },
+        {
+          "year": 2021,
+          "age": "35~39세",
+          "order": 7,
+          "total": 34638,
+          "male": 16957,
+          "female": 17681
+        },
+        {
+          "year": 2021,
+          "age": "40~44세",
+          "order": 8,
+          "total": 38999,
+          "male": 19300,
+          "female": 19699
+        },
+        {
+          "year": 2021,
+          "age": "45~49세",
+          "order": 9,
+          "total": 33765,
+          "male": 17531,
+          "female": 16234
+        },
+        {
+          "year": 2021,
+          "age": "50~54세",
+          "order": 10,
+          "total": 28013,
+          "male": 14762,
+          "female": 13251
+        },
+        {
+          "year": 2021,
+          "age": "55~59세",
+          "order": 11,
+          "total": 20863,
+          "male": 10819,
+          "female": 10044
+        },
+        {
+          "year": 2021,
+          "age": "60~64세",
+          "order": 12,
+          "total": 19706,
+          "male": 9829,
+          "female": 9877
+        },
+        {
+          "year": 2021,
+          "age": "65~69세",
+          "order": 13,
+          "total": 13816,
+          "male": 6767,
+          "female": 7049
+        },
+        {
+          "year": 2021,
+          "age": "70~74세",
+          "order": 14,
+          "total": 8733,
+          "male": 4230,
+          "female": 4503
+        },
+        {
+          "year": 2021,
+          "age": "75~79세",
+          "order": 15,
+          "total": 6042,
+          "male": 2640,
+          "female": 3402
+        },
+        {
+          "year": 2021,
+          "age": "80~84세",
+          "order": 16,
+          "total": 4665,
+          "male": 1751,
+          "female": 2914
+        },
+        {
+          "year": 2021,
+          "age": "85~89세",
+          "order": 17,
+          "total": 2892,
+          "male": 855,
+          "female": 2037
+        },
+        {
+          "year": 2021,
+          "age": "90~94세",
+          "order": 18,
+          "total": 1071,
+          "male": 225,
+          "female": 846
+        },
+        {
+          "year": 2021,
+          "age": "95~99세",
+          "order": 19,
+          "total": 217,
+          "male": 38,
+          "female": 179
+        },
+        {
+          "year": 2021,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 27,
+          "male": 7,
+          "female": 20
+        },
+        {
+          "year": 2022,
+          "age": "0~4세",
+          "order": 0,
+          "total": 18964,
+          "male": 9592,
+          "female": 9372
+        },
+        {
+          "year": 2022,
+          "age": "5~9세",
+          "order": 1,
+          "total": 26987,
+          "male": 13787,
+          "female": 13200
+        },
+        {
+          "year": 2022,
+          "age": "10~14세",
+          "order": 2,
+          "total": 27557,
+          "male": 13981,
+          "female": 13576
+        },
+        {
+          "year": 2022,
+          "age": "15~19세",
+          "order": 3,
+          "total": 21445,
+          "male": 10666,
+          "female": 10779
+        },
+        {
+          "year": 2022,
+          "age": "20~24세",
+          "order": 4,
+          "total": 17737,
+          "male": 9340,
+          "female": 8397
+        },
+        {
+          "year": 2022,
+          "age": "25~29세",
+          "order": 5,
+          "total": 20642,
+          "male": 10365,
+          "female": 10277
+        },
+        {
+          "year": 2022,
+          "age": "30~34세",
+          "order": 6,
+          "total": 27853,
+          "male": 13615,
+          "female": 14238
+        },
+        {
+          "year": 2022,
+          "age": "35~39세",
+          "order": 7,
+          "total": 33230,
+          "male": 16334,
+          "female": 16896
+        },
+        {
+          "year": 2022,
+          "age": "40~44세",
+          "order": 8,
+          "total": 41183,
+          "male": 20249,
+          "female": 20934
+        },
+        {
+          "year": 2022,
+          "age": "45~49세",
+          "order": 9,
+          "total": 35321,
+          "male": 17981,
+          "female": 17340
+        },
+        {
+          "year": 2022,
+          "age": "50~54세",
+          "order": 10,
+          "total": 30068,
+          "male": 15987,
+          "female": 14081
+        },
+        {
+          "year": 2022,
+          "age": "55~59세",
+          "order": 11,
+          "total": 21599,
+          "male": 11139,
+          "female": 10460
+        },
+        {
+          "year": 2022,
+          "age": "60~64세",
+          "order": 12,
+          "total": 20786,
+          "male": 10399,
+          "female": 10387
+        },
+        {
+          "year": 2022,
+          "age": "65~69세",
+          "order": 13,
+          "total": 15002,
+          "male": 7398,
+          "female": 7604
+        },
+        {
+          "year": 2022,
+          "age": "70~74세",
+          "order": 14,
+          "total": 9541,
+          "male": 4640,
+          "female": 4901
+        },
+        {
+          "year": 2022,
+          "age": "75~79세",
+          "order": 15,
+          "total": 6164,
+          "male": 2754,
+          "female": 3410
+        },
+        {
+          "year": 2022,
+          "age": "80~84세",
+          "order": 16,
+          "total": 5094,
+          "male": 1988,
+          "female": 3106
+        },
+        {
+          "year": 2022,
+          "age": "85~89세",
+          "order": 17,
+          "total": 2985,
+          "male": 895,
+          "female": 2090
+        },
+        {
+          "year": 2022,
+          "age": "90~94세",
+          "order": 18,
+          "total": 1165,
+          "male": 233,
+          "female": 932
+        },
+        {
+          "year": 2022,
+          "age": "95~99세",
+          "order": 19,
+          "total": 233,
+          "male": 39,
+          "female": 194
+        },
+        {
+          "year": 2022,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 35,
+          "male": 7,
+          "female": 28
+        },
+        {
+          "year": 2023,
+          "age": "0~4세",
+          "order": 0,
+          "total": 17223,
+          "male": 8666,
+          "female": 8557
+        },
+        {
+          "year": 2023,
+          "age": "5~9세",
+          "order": 1,
+          "total": 26318,
+          "male": 13456,
+          "female": 12862
+        },
+        {
+          "year": 2023,
+          "age": "10~14세",
+          "order": 2,
+          "total": 27898,
+          "male": 14216,
+          "female": 13682
+        },
+        {
+          "year": 2023,
+          "age": "15~19세",
+          "order": 3,
+          "total": 22838,
+          "male": 11369,
+          "female": 11469
+        },
+        {
+          "year": 2023,
+          "age": "20~24세",
+          "order": 4,
+          "total": 17657,
+          "male": 9184,
+          "female": 8473
+        },
+        {
+          "year": 2023,
+          "age": "25~29세",
+          "order": 5,
+          "total": 20153,
+          "male": 10015,
+          "female": 10138
+        },
+        {
+          "year": 2023,
+          "age": "30~34세",
+          "order": 6,
+          "total": 27376,
+          "male": 13434,
+          "female": 13942
+        },
+        {
+          "year": 2023,
+          "age": "35~39세",
+          "order": 7,
+          "total": 31964,
+          "male": 15834,
+          "female": 16130
+        },
+        {
+          "year": 2023,
+          "age": "40~44세",
+          "order": 8,
+          "total": 41770,
+          "male": 20350,
+          "female": 21420
+        },
+        {
+          "year": 2023,
+          "age": "45~49세",
+          "order": 9,
+          "total": 35413,
+          "male": 17894,
+          "female": 17519
+        },
+        {
+          "year": 2023,
+          "age": "50~54세",
+          "order": 10,
+          "total": 31378,
+          "male": 16622,
+          "female": 14756
+        },
+        {
+          "year": 2023,
+          "age": "55~59세",
+          "order": 11,
+          "total": 23055,
+          "male": 11879,
+          "female": 11176
+        },
+        {
+          "year": 2023,
+          "age": "60~64세",
+          "order": 12,
+          "total": 20922,
+          "male": 10508,
+          "female": 10414
+        },
+        {
+          "year": 2023,
+          "age": "65~69세",
+          "order": 13,
+          "total": 16311,
+          "male": 8025,
+          "female": 8286
+        },
+        {
+          "year": 2023,
+          "age": "70~74세",
+          "order": 14,
+          "total": 9916,
+          "male": 4794,
+          "female": 5122
+        },
+        {
+          "year": 2023,
+          "age": "75~79세",
+          "order": 15,
+          "total": 6562,
+          "male": 2999,
+          "female": 3563
+        },
+        {
+          "year": 2023,
+          "age": "80~84세",
+          "order": 16,
+          "total": 5160,
+          "male": 2024,
+          "female": 3136
+        },
+        {
+          "year": 2023,
+          "age": "85~89세",
+          "order": 17,
+          "total": 3074,
+          "male": 948,
+          "female": 2126
+        },
+        {
+          "year": 2023,
+          "age": "90~94세",
+          "order": 18,
+          "total": 1222,
+          "male": 253,
+          "female": 969
+        },
+        {
+          "year": 2023,
+          "age": "95~99세",
+          "order": 19,
+          "total": 272,
+          "male": 49,
+          "female": 223
+        },
+        {
+          "year": 2023,
+          "age": "100세 이상",
+          "order": 20,
+          "total": 43,
+          "male": 5,
+          "female": 38
+        }
+      ],
+      "source": {
+        "label": "행정안전부 주민등록 인구통계",
+        "url": "https://jumin.mois.go.kr/ageStatMonth.do",
+        "tables": [
+          "연령별 인구현황: 2012~2023년 12월, 세종특별자치시"
+        ],
+        "filters": [
+          "행정구역 코드 3600000000",
+          "등록구분 전체, 외국인 제외"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "공식 CSV 다운로드",
+            "detail": "downloadCsvAge.do?searchYearMonth=month&xlsStats=1 에 연도별 12월, sltOrgLvl1=A, sltArgTypes=5, 0~100세를 요청. 세종 행만 추출."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "공식 집계표에서 세종 단독 행·열만 추출. 인구 연령합·성별합, 순이동=전입-전출, 경로합+내부이동=총이동을 검산. 인구 비율은 해당 연도 총인구를 분모로 계산."
+        }
+      ]
+    },
+    "migration": {
+      "rows": [
+        {
+          "year": 2013,
+          "inflow": 23805,
+          "outflow": 15109,
+          "net": 8696
+        },
+        {
+          "year": 2014,
+          "inflow": 56526,
+          "outflow": 23070,
+          "net": 33456
+        },
+        {
+          "year": 2015,
+          "inflow": 83994,
+          "outflow": 30950,
+          "net": 53044
+        },
+        {
+          "year": 2016,
+          "inflow": 65052,
+          "outflow": 35236,
+          "net": 29816
+        },
+        {
+          "year": 2017,
+          "inflow": 82073,
+          "outflow": 47383,
+          "net": 34690
+        },
+        {
+          "year": 2018,
+          "inflow": 86433,
+          "outflow": 55000,
+          "net": 31433
+        },
+        {
+          "year": 2019,
+          "inflow": 82398,
+          "outflow": 58674,
+          "net": 23724
+        },
+        {
+          "year": 2020,
+          "inflow": 78934,
+          "outflow": 65909,
+          "net": 13025
+        },
+        {
+          "year": 2021,
+          "inflow": 76912,
+          "outflow": 62827,
+          "net": 14085
+        },
+        {
+          "year": 2022,
+          "inflow": 65529,
+          "outflow": 55401,
+          "net": 10128
+        },
+        {
+          "year": 2023,
+          "inflow": 56050,
+          "outflow": 54360,
+          "net": 1690
+        }
+      ],
+      "source": {
+        "label": "통계청 2023년 국내인구이동통계",
+        "url": "https://mods.go.kr/board.es?act=view&bid=205&list_no=429253&mid=a10301010000",
+        "tables": [
+          "첨부 통계표.xlsx: 표3 시도별 이동자 수 추이",
+          "표6 시도 전입·전출지 및 성별 이동자 수, 2023"
+        ],
+        "filters": [
+          "남녀 전체",
+          "세종 단독",
+          "추이 2013~2023, 이동 경로 2023"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "공식 엑셀 다운로드",
+            "detail": "https://mods.go.kr/boardDownload.es?bid=205&list_no=429253&seq=12. 표3의 세종 열, 표6의 세종 행(전입)과 열(전출)을 추출. 시도 간 합계에서 세종 내부 이동 21,803명 제외."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "공식 집계표에서 세종 단독 행·열만 추출. 인구 연령합·성별합, 순이동=전입-전출, 경로합+내부이동=총이동을 검산. 인구 비율은 해당 연도 총인구를 분모로 계산."
+        }
+      ]
+    },
+    "flows": {
+      "rows": [
+        {
+          "region": "서울",
+          "inflow": 4301,
+          "outflow": 4836,
+          "year": 2023
+        },
+        {
+          "region": "부산",
+          "inflow": 753,
+          "outflow": 615,
+          "year": 2023
+        },
+        {
+          "region": "대구",
+          "inflow": 666,
+          "outflow": 543,
+          "year": 2023
+        },
+        {
+          "region": "인천",
+          "inflow": 862,
+          "outflow": 886,
+          "year": 2023
+        },
+        {
+          "region": "광주",
+          "inflow": 617,
+          "outflow": 477,
+          "year": 2023
+        },
+        {
+          "region": "대전",
+          "inflow": 8415,
+          "outflow": 7042,
+          "year": 2023
+        },
+        {
+          "region": "울산",
+          "inflow": 276,
+          "outflow": 218,
+          "year": 2023
+        },
+        {
+          "region": "경기",
+          "inflow": 5509,
+          "outflow": 5256,
+          "year": 2023
+        },
+        {
+          "region": "강원",
+          "inflow": 656,
+          "outflow": 531,
+          "year": 2023
+        },
+        {
+          "region": "충북",
+          "inflow": 4000,
+          "outflow": 4134,
+          "year": 2023
+        },
+        {
+          "region": "충남",
+          "inflow": 4308,
+          "outflow": 4914,
+          "year": 2023
+        },
+        {
+          "region": "전북",
+          "inflow": 1103,
+          "outflow": 953,
+          "year": 2023
+        },
+        {
+          "region": "전남",
+          "inflow": 593,
+          "outflow": 521,
+          "year": 2023
+        },
+        {
+          "region": "경북",
+          "inflow": 889,
+          "outflow": 739,
+          "year": 2023
+        },
+        {
+          "region": "경남",
+          "inflow": 920,
+          "outflow": 572,
+          "year": 2023
+        },
+        {
+          "region": "제주",
+          "inflow": 379,
+          "outflow": 320,
+          "year": 2023
+        }
+      ],
+      "source": {
+        "label": "통계청 2023년 국내인구이동통계",
+        "url": "https://mods.go.kr/board.es?act=view&bid=205&list_no=429253&mid=a10301010000",
+        "tables": [
+          "첨부 통계표.xlsx: 표3 시도별 이동자 수 추이",
+          "표6 시도 전입·전출지 및 성별 이동자 수, 2023"
+        ],
+        "filters": [
+          "남녀 전체",
+          "세종 단독",
+          "추이 2013~2023, 이동 경로 2023"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "공식 엑셀 다운로드",
+            "detail": "https://mods.go.kr/boardDownload.es?bid=205&list_no=429253&seq=12. 표3의 세종 열, 표6의 세종 행(전입)과 열(전출)을 추출. 시도 간 합계에서 세종 내부 이동 21,803명 제외."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "공식 집계표에서 세종 단독 행·열만 추출. 인구 연령합·성별합, 순이동=전입-전출, 경로합+내부이동=총이동을 검산. 인구 비율은 해당 연도 총인구를 분모로 계산."
+        }
+      ]
+    },
+    "vacancy": {
+      "rows": [
+        {
+          "type": "중대형 상가",
+          "year": 2022,
+          "sejong": 22.9,
+          "national": 13.2
+        },
+        {
+          "type": "중대형 상가",
+          "year": 2023,
+          "sejong": 23.9,
+          "national": 13.5
+        },
+        {
+          "type": "소규모 상가",
+          "year": 2022,
+          "sejong": 10.9,
+          "national": 6.9
+        },
+        {
+          "type": "소규모 상가",
+          "year": 2023,
+          "sejong": 11.7,
+          "national": 7.3
+        },
+        {
+          "type": "집합 상가",
+          "year": 2022,
+          "sejong": 15.9,
+          "national": 9.4
+        },
+        {
+          "type": "집합 상가",
+          "year": 2023,
+          "sejong": 15.7,
+          "national": 9.9
+        }
+      ],
+      "source": {
+        "label": "한국부동산원 상업용부동산 임대동향조사 / 국민권익위원회 재수록",
+        "url": "https://www.acrc.go.kr/boardDownload.es?bid=4A&list_no=85908&seq=2",
+        "tables": [
+          "붙임1 최근 3년 시·도별 상업용부동산 공실률, 3쪽"
+        ],
+        "filters": [
+          "2022·2023년 4분기 열만 사용",
+          "세종과 전국, 상가 세 유형"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "공식 PDF 원표 대조",
+            "detail": "PDF 3쪽의 세종 및 전체 행을 추출하고 원표 이미지와 대조. 2024 열은 사용하지 않음."
+          }
+        ]
+      },
+      "methods": [
+        {
+          "language": "text",
+          "code": "공식 집계표에서 세종 단독 행·열만 추출. 인구 연령합·성별합, 순이동=전입-전출, 경로합+내부이동=총이동을 검산. 인구 비율은 해당 연도 총인구를 분모로 계산."
+        }
+      ]
+    },
+    "geography": {
+      "rows": [
+        {
+          "region": "강원",
+          "lon": 128.22,
+          "lat": 37.7951
+        },
+        {
+          "region": "경기",
+          "lon": 127.205,
+          "lat": 37.2562
+        },
+        {
+          "region": "충남",
+          "lon": 126.874,
+          "lat": 36.4602
+        },
+        {
+          "region": "인천",
+          "lon": 126.507,
+          "lat": 37.4983
+        },
+        {
+          "region": "전북",
+          "lon": 127.081,
+          "lat": 35.679
+        },
+        {
+          "region": "전남",
+          "lon": 126.884,
+          "lat": 34.8166
+        },
+        {
+          "region": "경남",
+          "lon": 128.217,
+          "lat": 35.3192
+        },
+        {
+          "region": "부산",
+          "lon": 129.082,
+          "lat": 35.1928
+        },
+        {
+          "region": "울산",
+          "lon": 129.232,
+          "lat": 35.4997
+        },
+        {
+          "region": "경북",
+          "lon": 128.708,
+          "lat": 36.3396
+        },
+        {
+          "region": "제주",
+          "lon": 126.557,
+          "lat": 33.3741
+        },
+        {
+          "region": "서울",
+          "lon": 126.994,
+          "lat": 37.5408
+        },
+        {
+          "region": "대전",
+          "lon": 127.401,
+          "lat": 36.3563
+        },
+        {
+          "region": "세종",
+          "lon": 127.229,
+          "lat": 36.4974
+        },
+        {
+          "region": "충북",
+          "lon": 127.668,
+          "lat": 36.7476
+        },
+        {
+          "region": "광주",
+          "lon": 126.929,
+          "lat": 35.1989
+        },
+        {
+          "region": "대구",
+          "lon": 128.631,
+          "lat": 35.9034
+        }
+      ],
+      "source": {
+        "label": "Natural Earth 1:10m Admin 0/1",
+        "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+        "tables": [
+          "Admin 0 Countries: KOR",
+          "Admin 1 States Provinces: KOR latitude/longitude"
+        ],
+        "filters": [
+          "지도 대표점이며 실제 이동 경로 아님"
+        ]
+      }
+    }
+  },
+  "id": "report:e4057368-7fcf-4c66-9dfc-dfcc1b3bec59",
+  "buildStatus": "complete"
+}

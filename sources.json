@@ -1,0 +1,131 @@
+{
+  "sources": {
+    "population": {
+      "label": "행정안전부 주민등록 인구통계",
+      "url": "https://jumin.mois.go.kr/ageStatMonth.do",
+      "tables": [
+        "연령별 인구현황: 2012~2023년 12월, 세종특별자치시"
+      ],
+      "filters": [
+        "행정구역 코드 3600000000",
+        "등록구분 전체, 외국인 제외"
+      ],
+      "evidenceFlow": [
+        {
+          "title": "공식 CSV 다운로드",
+          "detail": "downloadCsvAge.do?searchYearMonth=month&xlsStats=1 에 연도별 12월, sltOrgLvl1=A, sltArgTypes=5, 0~100세를 요청. 세종 행만 추출."
+        }
+      ]
+    },
+    "ages": {
+      "label": "행정안전부 주민등록 인구통계",
+      "url": "https://jumin.mois.go.kr/ageStatMonth.do",
+      "tables": [
+        "연령별 인구현황: 2012~2023년 12월, 세종특별자치시"
+      ],
+      "filters": [
+        "행정구역 코드 3600000000",
+        "등록구분 전체, 외국인 제외"
+      ],
+      "evidenceFlow": [
+        {
+          "title": "공식 CSV 다운로드",
+          "detail": "downloadCsvAge.do?searchYearMonth=month&xlsStats=1 에 연도별 12월, sltOrgLvl1=A, sltArgTypes=5, 0~100세를 요청. 세종 행만 추출."
+        }
+      ]
+    },
+    "migration": {
+      "label": "통계청 2023년 국내인구이동통계",
+      "url": "https://mods.go.kr/board.es?act=view&bid=205&list_no=429253&mid=a10301010000",
+      "tables": [
+        "첨부 통계표.xlsx: 표3 시도별 이동자 수 추이",
+        "표6 시도 전입·전출지 및 성별 이동자 수, 2023"
+      ],
+      "filters": [
+        "남녀 전체",
+        "세종 단독",
+        "추이 2013~2023, 이동 경로 2023"
+      ],
+      "evidenceFlow": [
+        {
+          "title": "공식 엑셀 다운로드",
+          "detail": "https://mods.go.kr/boardDownload.es?bid=205&list_no=429253&seq=12. 표3의 세종 열, 표6의 세종 행(전입)과 열(전출)을 추출. 시도 간 합계에서 세종 내부 이동 21,803명 제외."
+        }
+      ]
+    },
+    "flows": {
+      "label": "통계청 2023년 국내인구이동통계",
+      "url": "https://mods.go.kr/board.es?act=view&bid=205&list_no=429253&mid=a10301010000",
+      "tables": [
+        "첨부 통계표.xlsx: 표3 시도별 이동자 수 추이",
+        "표6 시도 전입·전출지 및 성별 이동자 수, 2023"
+      ],
+      "filters": [
+        "남녀 전체",
+        "세종 단독",
+        "추이 2013~2023, 이동 경로 2023"
+      ],
+      "evidenceFlow": [
+        {
+          "title": "공식 엑셀 다운로드",
+          "detail": "https://mods.go.kr/boardDownload.es?bid=205&list_no=429253&seq=12. 표3의 세종 열, 표6의 세종 행(전입)과 열(전출)을 추출. 시도 간 합계에서 세종 내부 이동 21,803명 제외."
+        }
+      ]
+    },
+    "vacancy": {
+      "label": "한국부동산원 상업용부동산 임대동향조사 / 국민권익위원회 재수록",
+      "url": "https://www.acrc.go.kr/boardDownload.es?bid=4A&list_no=85908&seq=2",
+      "tables": [
+        "붙임1 최근 3년 시·도별 상업용부동산 공실률, 3쪽"
+      ],
+      "filters": [
+        "2022·2023년 4분기 열만 사용",
+        "세종과 전국, 상가 세 유형"
+      ],
+      "evidenceFlow": [
+        {
+          "title": "공식 PDF 원표 대조",
+          "detail": "PDF 3쪽의 세종 및 전체 행을 추출하고 원표 이미지와 대조. 2024 열은 사용하지 않음."
+        }
+      ]
+    },
+    "geography": {
+      "label": "Natural Earth 1:10m Admin 0/1",
+      "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "tables": [
+        "Admin 0 Countries: KOR",
+        "Admin 1 States Provinces: KOR latitude/longitude"
+      ],
+      "filters": [
+        "지도 대표점이며 실제 이동 경로 아님"
+      ]
+    }
+  },
+  "validation": {
+    "populationYears": 12,
+    "ageRows": 252,
+    "migrationYears": 11,
+    "flowRegions": 16,
+    "maxYear": 2023,
+    "checks": "passed",
+    "sha256": {
+      "mois_2012.csv": "39cb928b2cf52843c07bf67f15b391cdfd7011b21fd1fb92559862361aa64bd4",
+      "mois_2013.csv": "07c90df17fcd461becdffac02fa591714d4885ec232fc1adcd3714e630e0be9e",
+      "mois_2014.csv": "4d33c24f46507e0bfb100432ce731bba16ec212d2dd2d406a67ef4a2e0a37957",
+      "mois_2015.csv": "956c6d46e7a4eb262dc873c4397b5d4ae7e070770ee78ca10edf08f27c7abd1f",
+      "mois_2016.csv": "be2722cb1fe22601efb607e4c49ed3aa6b8958bc8af42dceefc5076420e3bbf3",
+      "mois_2017.csv": "6517a57926d18533de5854071e926de83613839054253ccc7eabb3d87f594db2",
+      "mois_2018.csv": "a8f1fdfcf421faee020be5d3139b32d9fd995c473267c4b4aadbccdf0f785782",
+      "mois_2019.csv": "520409bb0509f593309aceee65f5ad4ed59265e20da0947c17ba79f9afd6ec80",
+      "mois_2020.csv": "2155128efd39b11b96f95e6f68d4ecde1dd5254cce42eba181227b2b8845441a",
+      "mois_2021.csv": "2503738d4e1afecfca1f09d2f35b776027fe13e7f579970e70d2103a077afc1c",
+      "mois_2022.csv": "f4312cc6ffcf79af8e443f3ed69bf1b1ac93a84b624f707d3f9aad9c4a713064",
+      "mois_2023.csv": "62567bf979b1e60277bf64192eb1a9dc2fbbbf9ae2dd6ce0503cef0fa180d9d7"
+    },
+    "rawFiles": {
+      "migration.xlsx": "7d1cea418c8b3297686634d41f695f17f61e27b7b52284f40a2bc09b67b02811",
+      "vacancy.pdf": "613c8d3e9bbea295c5c052090db7e06273e6b9edaec52d9100c2f94905097bc5"
+    },
+    "scope": "세종 단독, 2023년까지. 연구 실험 및 2024 평가 미접근."
+  }
+}
